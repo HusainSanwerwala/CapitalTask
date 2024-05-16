@@ -1,7 +1,11 @@
+using CapitalTask.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddSingleton<ICosmosService, CosmosService>();
 
 var app = builder.Build();
 
